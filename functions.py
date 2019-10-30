@@ -24,18 +24,11 @@ def show_barber():
     return myresult
 
 def add_barber(name,address):
-    try:
-        sql = "INSERT INTO barbers (name, address) VALUES (%s, %s)" 
-        val = (name, address)
-        mycursor.execute(sql, val)
-        mydb.commit()
-    except:
-        mycursor.execute("CREATE TABLE barbers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")
-        sql = "INSERT INTO barbers (name, address) VALUES (%s, %s)" 
-        val = (name, address)
-        mycursor.execute(sql, val)
-        mydb.commit()
-
+    sql = "INSERT INTO barbers (name, address) VALUES (%s, %s)" 
+    val = (name, address)
+    mycursor.execute(sql, val)
+    mydb.commit()
+    
 def delete_barber(id):
     sql = 'DELETE FROM barbers WHERE id = %s'
     mycursor.execute(sql, (id,))
