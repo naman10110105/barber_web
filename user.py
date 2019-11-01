@@ -17,4 +17,8 @@ if (option=="1"):
     username= input("Enter E-mail ID: ")
     password= input("Enter Password: ")
     stamp= "customer"
-    functions.login(username,password,stamp)
+    flag= functions.login(username,password,stamp)
+    if (flag == 1):
+        info= functions.account(username)
+        print("\n\nWelcome back " + info[0] +". \n\nHere are the barbers from "+ info[1] + " location.\n\n")
+        functions.customer_barber(info[1])

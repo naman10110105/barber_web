@@ -11,10 +11,14 @@ while True:
         for x in ans:
             print(x)
     elif (option=="2"):
-        name= input("Enter name: ")
-        address= input("Enter address: ")
-        functions.add_barber(name, address)
-        print("Record added successfully")
+        username= input("Enter E-mail ID: ")
+        password= input("Enter Password: ")
+        stamp= "barber"
+        myresult= functions.register(username,password,stamp)
+        if (myresult== None):
+            name= input("\n\n\nRegistered Successfully\n\n\nWelcome new barber \n\nEnter Name: ")
+            location= input("Enter location: ")
+            functions.insert_barber(name,location,username)
     elif (option=="3"):
         ans = functions.show_barber()
         for x in ans:
