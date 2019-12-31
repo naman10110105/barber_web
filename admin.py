@@ -1,6 +1,8 @@
 #admin module 
 import functions
-
+a = 50
+b = a+1
+print (b)
 while True:
 
     print("\n1. Show All\n" "2. Add Barber\n" "3. Delete Barber\n" "4. Update Barber\n" "5. Set Active/Inactive\n")
